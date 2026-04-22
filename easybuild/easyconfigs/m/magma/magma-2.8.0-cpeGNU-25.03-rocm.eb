@@ -48,12 +48,14 @@ Requires.private:
 toolchain = {'name': 'cpeGNU', 'version': '25.03'}
 toolchainopts = {'pic': True, 'openmp': True}
 
-source_urls = ['https://icl.cs.utk.edu/projectsfiles/magma/downloads/']
-sources = [SOURCE_TAR_GZ]
+
+source_urls = [GITHUB_SOURCE]
+github_account = 'icl-utk-edu'
+sources = ['v%(version)s.tar.gz']
 patches = ['magma-2.8.0_separate-cxx-and-hip-compilation.patch']
 
 checksums = [
-    'f4e5e75350743fe57f49b615247da2cc875e5193cc90c11b43554a7c82cc4348', # magma-2.8.0.tar.gz
+    'ceec5c4465619be650c4581cb3b3fca152f16256da7afc917e2ddc8e858d9e7f', # v2.8.0.tar.gz
     '72d89534fe8a15ea42821a06b8a5b07d78039d0c7e493915f9a9581d3a5d8308', # magma-2.8.0_separate-cxx-and-hip-compilation.patch
 ]
 
