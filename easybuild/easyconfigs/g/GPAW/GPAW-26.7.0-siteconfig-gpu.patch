@@ -1,0 +1,49 @@
+--- /dev/null
++++ b/siteconfig-lumi-gpu.py
+@@ -0,0 +1,46 @@
++"""Custom GPAW siteconfig for LUMI-G."""
++
++mpi = True
++compiler = 'CC'
++compiler_args = []  # remove all default args
++libraries = []
++library_dirs = []
++include_dirs = []
++extra_compile_args = [
++    '-g',
++    '-O3',
++    '-fopenmp',
++    '-fPIC',
++    '-Wall',
++    '-Wno-stringop-overflow',  # suppress warnings from MPI_STATUSES_IGNORE
++    ]
++extra_link_args = ['-fopenmp']
++
++# FFTW
++fftw = True
++libraries += ['fftw3']
++
++# ScaLAPACK
++# Note: required libraries are linked by compiler wrappers
++scalapack = True
++
++# Libxc
++libraries += ['xc']
++
++define_macros += [('GPAW_ASYNC', 1)]
++
++# MAGMA
++magma = True
++libraries += ['magma']
++
++# hip
++gpu = True
++gpu_target = 'hip-amd'
++gpu_compiler = 'hipcc'
++gpu_include_dirs = []
++gpu_compile_args = [
++    '-g',
++    '-O3',
++    '--offload-arch=gfx90a',
++    ]
++libraries += ['amdhip64', 'hipblas']
