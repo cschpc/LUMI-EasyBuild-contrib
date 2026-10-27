@@ -32,11 +32,13 @@ sources = [{
 patches = [
    {'name': 'GPAW-%(version)s-siteconfig-gpu.patch', 'level': 1},
    {'name': 'GPAW-%(version)s-fix-dependency-versions.patch', 'level': 1},
+   {'name': 'GPAW-%(version)s-fix-scipy.patch', 'level': 1},
 ]
 checksums = [
     {'gpaw-26.7.0.tar.gz': 'a1623c0575a37a662c64bad708b8a1caa6b505c105d9d494e3371575f6905386'},
     {'GPAW-26.7.0-siteconfig-gpu.patch': '779bf77260f9a3ca9c8de7c94479be9f6e182f31410f5d8d510f9969333dd261'},
     {'GPAW-26.7.0-fix-dependency-versions.patch': '192c7d7cdb3c14a8a0bf140c61168960a19ba4c4c18ce41d4ecb42a8effc809f'},
+    {'GPAW-26.7.0-fix-scipy.patch': '84246901e4ea6632053038a55715211d350dda405124ebddcafddd36a5e2a53c'},
 ]
 
 builddependencies = [
