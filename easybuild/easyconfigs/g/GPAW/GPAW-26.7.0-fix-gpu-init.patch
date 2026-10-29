@@ -1,0 +1,13 @@
+diff --git a/gpaw/gpu/__init__.py b/gpaw/gpu/__init__.py
+index 94f36fa27f..499e328578 100644
+--- a/gpaw/gpu/__init__.py
++++ b/gpaw/gpu/__init__.py
+@@ -221,6 +221,7 @@ if not TYPE_CHECKING:
+ 
+ def set_device(log, world=None):
+     global device_id
++    global device_count
+ 
+     if device_id is not None:
+         return
+
